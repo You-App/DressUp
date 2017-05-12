@@ -20,6 +20,10 @@ class WindowLibrary {
         }
     }
 
+    getFaceWindowFrame(){
+        return this.windows[0];
+    }
+
     getHairWindowFrame(){
         return this.windows[1];
     }

@@ -4,7 +4,7 @@ class WindowManager {
         this.windowLibrary = new WindowLibrary();
         this.buttonLibrary = buttonLibrary;
         this.windows = [];
-        let faceCategoryWindow = new FaceCategoryWindow(this.windowLibrary, this.windowLibrary, this.model);
+        let faceCategoryWindow = new FaceCategoryWindow(this.buttonLibrary, this.windowLibrary, this.model);
         faceCategoryWindow.isPaused = false;
         let hairCategoryWindow = new HairCategoryWindow(this.buttonLibrary, this.windowLibrary, this.model);
         let clothesCategoryWindow = new ClothesCategoryWindow(this.buttonLibrary, this.windowLibrary, this.model);

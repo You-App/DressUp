@@ -42,21 +42,12 @@ class GameScreen {
         this.buttons.push(clothesCategoryButton);
         let accessoriesCategoryButton = new Button(948, 118, 'category-accessories', this.windowManager.unpauseAccessoriesCategoryWindow.bind(this.windowManager.context), this.buttonLibrary);
         this.buttons.push(accessoriesCategoryButton);
-       // let leftBackHairButton = new Button(700, 100, 'arrow-left', this.model, this.model.previousBackHair.bind(this.model.context), this.buttonLibrary);
-       // this.buttons.push(leftBackHairButton);
-       // let rightBackHairButton = new Button(600, 100, 'arrow-right', this.model, this.model.nextBackHair.bind(this.model.context), this.buttonLibrary);
-       // this.buttons.push(rightBackHairButton);
-
-       // let leftFringeButton = new Button(700, 250, 'arrow-left', this.model, this.model.previousFringe.bind(this.model.context), this.buttonLibrary);
-       // this.buttons.push(leftFringeButton);
-       // let rightFringeButton = new Button(600, 250, 'arrow-right', this.model, this.model.nextFringe.bind(this.model.context),this.buttonLibrary);
-       // this.buttons.push(rightFringeButton);
-
     }
 
     addWindows() {
         let face = new FaceCategoryWindow();
         this.windows.push(face);
+        
     }
 
     handleInputMouseDown(event) {
@@ -84,31 +75,12 @@ class GameScreen {
         }
     }
 
-    //handleInputMouseUp(event) {
-    //    let canvas = document.getElementById('canvas');
-    //    let canvasLeft = canvas.offsetLeft;
-    //    let canvasTop = canvas.offsetTop;
-    //    let x = event.pageX - canvasLeft;
-    //    let y = event.pageY - canvasTop;
-//
-    //    //check collision between click and elements
-    //    for(let b = 0; b < this.buttons.length; b++) {
-    //        let current = this.buttons[b];
-    //        if (y > current.y && y < current.y + current.height && x > current.x && x < current.x + current.width) {
-    //            this.buttons[b].isClicked = false;
-    //        }
-    //    }
-//
-    //}
-
     addEventListener() {
         document.getElementById('canvas').addEventListener('mousedown', this.handleInputMouseDown.bind(this));
-        //document.getElementById('canvas').addEventListener('mouseup', this.handleInputMouseUp.bind(this));
 
     }
 
     dispose() {
         document.getElementById('canvas').removeEventListener('mousedown', this.handleInputMouseDown);
-        //document.getElementById('canvas').removeEventListener('mouseup', this.handleInputMouseUp);
     }
 }

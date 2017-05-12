@@ -3,13 +3,24 @@ class ModelLibrary {
     constructor(){
         this.hairWidth = 568;
         this.hairHeight = 852;
+        this.eyesWidth = 214;
+        this.eyesHeight = 82;
+        this.mouthWidth = 96;
+        this.mouthHeight = 52;
+
         this.backHairCount = 6;
         this.fringeCount = 5;
+        this.eyesCount = 1;
+        this.mouthsCount = 1;
 
         this.backHairSpritesheet = new Image();
         this.backHairSpritesheet.src = './assets/backHair_568x852.png';
         this.fringesSpritesheet = new Image();
         this.fringesSpritesheet.src = './assets/fringe_568x852.png';
+        this.eyesSpriteSheet = new Image();
+        this.eyesSpriteSheet.src = './assets/eyes_214x82.png';
+        this.mouthSpriteSheet = new Image();
+        this.mouthSpriteSheet.src= './assets/mouths_96x52.png';
 
         //Arrays holding frame coordinates
         this.bodyBaseFrames = [];
@@ -40,7 +51,19 @@ class ModelLibrary {
     }
 
     addEyes(){
-        
+        let x = 0;
+        let y = 0;
+
+        for (let i = 0; i < this.eyesCount; i++){
+            let mouth = [];
+            for (let j = 0; j < 5; j++) {
+                let current = new Frame(x, y, this.eyesWidth, this.eyesHeight);
+                mouth.push(current);
+                x += this.eyesWidth;
+            }
+            y += this.eyesHeight;
+            this.eyeFrames.push(mouth);
+        }
     }
 
     addEyebrows(){
@@ -48,7 +71,14 @@ class ModelLibrary {
     }
 
     addMouths(){
+        let x = 0;
+        let y = 0;
 
+        for (let i = 0; i < this.eyesCount; i++){
+            let mouth = new Frame(x, y, this.mouthWidth, this.mouthHeight);
+            y += this.mouthHeight;
+            this.mouthFrames.push(mouth);
+        }
     }
 
     addFringes(){
