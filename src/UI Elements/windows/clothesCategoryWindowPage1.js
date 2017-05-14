@@ -62,9 +62,9 @@ class ClothesCategoryWindowPage1 {
     }
 
     addButtons() {
-        let leftTopsButton = new Button(580, 333, 'arrow-left', this.model.previousBackHair.bind(this.model.context), this.buttonLibrary);
+        let leftTopsButton = new Button(580, 333, 'arrow-left', this.model.previousTop.bind(this.model.context), this.buttonLibrary);
         this.buttons.push(leftTopsButton);
-        let rightTopsButton = new Button(654, 333, 'arrow-right', this.model.nextBackHair.bind(this.model.context), this.buttonLibrary);
+        let rightTopsButton = new Button(654, 333, 'arrow-right', this.model.nextTop.bind(this.model.context), this.buttonLibrary);
         this.buttons.push(rightTopsButton);
 
         let leftJacketsButton = new Button(851, 333, 'arrow-left', this.model.previousEyebrows.bind(this.model.context), this.buttonLibrary);
@@ -72,9 +72,9 @@ class ClothesCategoryWindowPage1 {
         let rightJacketsButton = new Button(925, 333, 'arrow-right', this.model.nextEyebrows.bind(this.model.context),this.buttonLibrary);
         this.buttons.push(rightJacketsButton);
 
-        let leftBottomsButton = new Button(580, 549, 'arrow-left', this.model.previousFringe.bind(this.model.context), this.buttonLibrary);
+        let leftBottomsButton = new Button(580, 549, 'arrow-left', this.model.previousBottom.bind(this.model.context), this.buttonLibrary);
         this.buttons.push(leftBottomsButton);
-        let rightBottomsButton = new Button(654, 549, 'arrow-right', this.model.nextFringe.bind(this.model.context),this.buttonLibrary);
+        let rightBottomsButton = new Button(654, 549, 'arrow-right', this.model.nextBottom.bind(this.model.context),this.buttonLibrary);
         this.buttons.push(rightBottomsButton);
 
         let leftShoesButton = new Button(851, 549, 'arrow-left', this.model.previousFringe.bind(this.model.context), this.buttonLibrary);

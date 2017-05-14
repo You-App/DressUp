@@ -15,6 +15,10 @@ class ModelLibrary {
         this.underwearHeight = 132;
         this.legAccessoriesWidth = 205;
         this.legAccessoriesHeight = 410;
+        this.topWidth = 403;
+        this.topHeight = 278;
+        this.bottomsWidth = 441;
+        this.bottomsHeight = 432;
 
         this.backHairCount = 6;
         this.fringeCount = 5;
@@ -24,6 +28,8 @@ class ModelLibrary {
         this.brasCount = 3;
         this.underwearCount = 2;
         this.legAccessoriesCount = 2;
+        this.topsCount = 3;
+        this.bottomsCount = 1;
 
         this.backHairSpritesheet = new Image();
         this.backHairSpritesheet.src = './assets/backHair_568x852.png';
@@ -41,6 +47,10 @@ class ModelLibrary {
         this.underwearSpriteSheet.src = './assets/underwear_244x132.png';
         this.legAcessoriesSpriteSheet = new Image();
         this.legAcessoriesSpriteSheet.src = './assets/legAccessories_205x410.png';
+        this.topsSpriteSheet = new Image();
+        this.topsSpriteSheet.src = './assets/tops_403x278.png';
+        this.bottomsSpriteSheet = new Image();
+        this.bottomsSpriteSheet.src = './assets/bottoms_441x432.png';
 
 
         //Arrays holding frame coordinates
@@ -54,7 +64,9 @@ class ModelLibrary {
         this.bottomFrames = [];
         this.braFrames = [];
         this.underwearFrames = [];
-        this.legAccessories = [];
+        this.legAccessoryFrames = [];
+        this.topFrames = [];
+        this.bottomFrames = [];
 
         this.addBodyBases();
         this.addEyes();
@@ -145,11 +157,23 @@ class ModelLibrary {
     }
 
     addTops(){
+        let x = 0;
 
+        for (let i = 0; i < this.topsCount; i++){
+            let top = new Frame(x, 0, this.topWidth, this.topHeight);
+            x += this.topWidth;
+            this.topFrames.push(top);
+        }
     }
 
     addBottoms(){
+        let x = 0;
 
+        for (let i = 0; i < this.bottomsCount; i++){
+            let bot = new Frame(x, 0, this.bottomsWidth, this.bottomsHeight);
+            x += this.bottomsWidth;
+            this.bottomFrames.push(bot);
+        }
     }
 
     addBras(){
@@ -179,7 +203,7 @@ class ModelLibrary {
         for (let i = 0; i < this.legAccessoriesCount; i++) {
             let leg = new Frame(x, 0, this.legAccessoriesWidth, this.legAccessoriesHeight);
             x += this.legAccessoriesWidth;
-            this.legAccessories.push(leg);
+            this.legAccessoryFrames.push(leg);
         }
     }
 }
