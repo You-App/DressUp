@@ -2,7 +2,7 @@ class WindowLibrary {
     constructor() {
         this.width = 560;
         this.height = 614;
-        this.windowsCount = 2;
+        this.windowsCount = 4;
         this.spriteSheet = new Image();
         this.spriteSheet.src = './assets/categoryWindows_560x614.png';
         this.windows = [];
@@ -26,5 +26,13 @@ class WindowLibrary {
 
     getHairWindowFrame(){
         return this.windows[1];
+    }
+
+    getClothesWindowFrame1(){
+        return this.windows[2];
+    }
+
+    getClothesWindowFrame2(){
+        return this.windows[3];
     }
 }

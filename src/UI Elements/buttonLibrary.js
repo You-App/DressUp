@@ -2,21 +2,29 @@ class ButtonLibrary {
     constructor(){
         this.arrowButtonWidth= 58;
         this.arrowButtonHeight = 88;
+        this.smallArrowButtonWidth = 40;
+        this.smallArrowButtonHeight = 50;
         this.categoryButtonWidth = 65;
         this.categoryButtonHeight = 49;
         this.categoryButtonsCount = 4;
         this.arrowButtonsCount = 2;
+        this.smallArrowButtonsCount = 2;
         this.buttonStateCount = 2;
 
         this.arrowButtonSpritesheet = new Image();
         this.arrowButtonSpritesheet.src = './assets/buttons_58x88.png';
         this.arrowButtons = [];
 
+        this.smallArrowButtonSpritesheet = new Image();
+        this.smallArrowButtonSpritesheet.src = './assets/pageButtons_40x50.png';
+        this.smallArrowButtons = [];
+
         this.categoryButtonSpriteSheet = new Image();
         this.categoryButtonSpriteSheet.src = './assets/categoryButtons_65x49.png';
         this.categoryButtons = [];
 
         this.addArrowButtons();
+        this.addSmallArrowButtons();
         this.addCategoryButtons();
     }
 
@@ -33,6 +41,22 @@ class ButtonLibrary {
             }
             this.arrowButtons.push(currentButton);
             y += this.arrowButtonHeight;
+        }
+    }
+
+    addSmallArrowButtons() {
+        let x = 0;
+        let y = 0;
+        for (let i = 0; i < this.smallArrowButtonsCount; i++) {
+            x = 0;
+            let currentButton = [];
+            for (let j = 0; j < this.buttonStateCount; j++) {
+                let buttonState = new Frame(x, y, this.smallArrowButtonWidth, this.smallArrowButtonHeight);
+                currentButton.push(buttonState);
+                x += this.smallArrowButtonWidth;
+            }
+            this.smallArrowButtons.push(currentButton);
+            y += this.smallArrowButtonHeight;
         }
     }
 
@@ -61,6 +85,12 @@ class ButtonLibrary {
             case 'arrow-right':
                 result = this.arrowButtons[0];
                 break;
+            case 'arrow-left-small':
+                result = this.smallArrowButtons[1];
+                break;
+            case 'arrow-right-small':
+                result = this.smallArrowButtons[0];
+                break;
             case 'category-face':
                 result = this.categoryButtons[0];
                 break;
@@ -82,7 +112,9 @@ class ButtonLibrary {
 
     getButtonSpriteSheetByType(type) {
         let result = null;
-        if(type.includes('arrow')) {
+        if(type.includes('small')){
+            result = this.smallArrowButtonSpritesheet;
+        } else if(type.includes('arrow')) {
             result = this.arrowButtonSpritesheet;
         } else if(type.includes('category')) {
             result = this.categoryButtonSpriteSheet;
@@ -95,7 +127,9 @@ class ButtonLibrary {
 
     getHeightByType(type) {
         let result = null;
-        if(type.includes('arrow')) {
+        if(type.includes('small')){
+            result = this.smallArrowButtonHeight;
+        } else if(type.includes('arrow')) {
             result = this.arrowButtonHeight;
         } else if(type.includes('category')) {
             result = this.categoryButtonHeight;
@@ -105,7 +139,9 @@ class ButtonLibrary {
 
     getWidthByType(type) {
         let result = null;
-        if(type.includes('arrow')) {
+        if(type.includes('small')){
+            result = this.smallArrowButtonWidth;
+        } else if(type.includes('arrow')) {
             result = this.arrowButtonWidth;
         } else if(type.includes('category')) {
             result = this.categoryButtonWidth;

@@ -38,7 +38,7 @@ class GameScreen {
         this.buttons.push(faceCategoryButton);
         let hairCategoryButton = new Button(690, 117, 'category-hair', this.windowManager.unpauseHairCategoryWindow.bind(this.windowManager.context), this.buttonLibrary);
         this.buttons.push(hairCategoryButton);
-        let clothesCategoryButton = new Button(817, 122, 'category-clothes', this.windowManager.unpauseClothesCategoryWindow.bind(this.windowManager.context), this.buttonLibrary);
+        let clothesCategoryButton = new Button(817, 122, 'category-clothes', this.windowManager.unpauseClothesCategoryWindow1.bind(this.windowManager.context), this.buttonLibrary);
         this.buttons.push(clothesCategoryButton);
         let accessoriesCategoryButton = new Button(948, 118, 'category-accessories', this.windowManager.unpauseAccessoriesCategoryWindow.bind(this.windowManager.context), this.buttonLibrary);
         this.buttons.push(accessoriesCategoryButton);

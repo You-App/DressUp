@@ -1,5 +1,6 @@
 class WindowManager {
     constructor(buttonLibrary, model) {
+        this.context = this;
         this.model = model;
         this.windowLibrary = new WindowLibrary();
         this.buttonLibrary = buttonLibrary;
@@ -7,14 +8,16 @@ class WindowManager {
         let faceCategoryWindow = new FaceCategoryWindow(this.buttonLibrary, this.windowLibrary, this.model);
         faceCategoryWindow.isPaused = false;
         let hairCategoryWindow = new HairCategoryWindow(this.buttonLibrary, this.windowLibrary, this.model);
-        let clothesCategoryWindow = new ClothesCategoryWindow(this.buttonLibrary, this.windowLibrary, this.model);
+        let clothesCategoryWindow1 = new ClothesCategoryWindowPage1(this.buttonLibrary, this.windowLibrary, this, this.model);
+        let clothesCategoryWindow2 = new ClothesCategoryWindowPage2(this.buttonLibrary, this.windowLibrary, this, this.model);
         let accessoriesCategoryWindow = new AccessoriesCategoryWindow(this.buttonLibrary, this.windowLibrary, this.model);
 
         this.windows.push(faceCategoryWindow);
         this.windows.push(hairCategoryWindow);
-        this.windows.push(clothesCategoryWindow);
+        this.windows.push(clothesCategoryWindow1);
+        this.windows.push(clothesCategoryWindow2);
         this.windows.push(accessoriesCategoryWindow);
-        this.context = this;
+
         this.addEventListeners();
     }
 
@@ -80,14 +83,19 @@ class WindowManager {
         this.windows[1].isPaused = false;
     }
 
-    unpauseClothesCategoryWindow() {
+    unpauseClothesCategoryWindow1() {
         this.pauseWindows();
         this.windows[2].isPaused = false;
     }
 
-    unpauseAccessoriesCategoryWindow() {
+    unpauseClothesCategoryWindow2() {
         this.pauseWindows();
         this.windows[3].isPaused = false;
+    }
+
+    unpauseAccessoriesCategoryWindow() {
+        this.pauseWindows();
+        this.windows[4].isPaused = false;
     }
 
     pauseWindows() {

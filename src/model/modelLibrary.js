@@ -7,11 +7,14 @@ class ModelLibrary {
         this.eyesHeight = 82;
         this.mouthWidth = 96;
         this.mouthHeight = 52;
+        this.eyebrowsWidth = 194;
+        this.eyebrowsHeight = 77;
 
         this.backHairCount = 6;
         this.fringeCount = 5;
         this.eyesCount = 1;
         this.mouthsCount = 1;
+        this.eyebrowsCount = 4;
 
         this.backHairSpritesheet = new Image();
         this.backHairSpritesheet.src = './assets/backHair_568x852.png';
@@ -21,6 +24,8 @@ class ModelLibrary {
         this.eyesSpriteSheet.src = './assets/eyes_214x82.png';
         this.mouthSpriteSheet = new Image();
         this.mouthSpriteSheet.src= './assets/mouths_96x52.png';
+        this.eyebrowsSpriteSheet = new Image();
+        this.eyebrowsSpriteSheet.src = './assets/eyebrows_194x77.png';
 
         //Arrays holding frame coordinates
         this.bodyBaseFrames = [];
@@ -67,14 +72,21 @@ class ModelLibrary {
     }
 
     addEyebrows(){
+        let x = 0;
+        let y = 0;
 
+        for (let i = 0; i < this.eyebrowsCount; i++){
+            let eyebrows = new Frame(x, y, this.eyebrowsWidth, this.eyebrowsHeight);
+            y += this.eyebrowsHeight;
+            this.eyebrowFrames.push(eyebrows);
+        }
     }
 
     addMouths(){
         let x = 0;
         let y = 0;
 
-        for (let i = 0; i < this.eyesCount; i++){
+        for (let i = 0; i < this.mouthsCount; i++){
             let mouth = new Frame(x, y, this.mouthWidth, this.mouthHeight);
             y += this.mouthHeight;
             this.mouthFrames.push(mouth);
