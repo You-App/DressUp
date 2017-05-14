@@ -9,12 +9,21 @@ class ModelLibrary {
         this.mouthHeight = 52;
         this.eyebrowsWidth = 194;
         this.eyebrowsHeight = 77;
+        this.brasWidth = 230;
+        this.brasHeight = 286;
+        this.underwearWidth = 244;
+        this.underwearHeight = 132;
+        this.legAccessoriesWidth = 205;
+        this.legAccessoriesHeight = 410;
 
         this.backHairCount = 6;
         this.fringeCount = 5;
         this.eyesCount = 1;
         this.mouthsCount = 1;
         this.eyebrowsCount = 4;
+        this.brasCount = 3;
+        this.underwearCount = 2;
+        this.legAccessoriesCount = 2;
 
         this.backHairSpritesheet = new Image();
         this.backHairSpritesheet.src = './assets/backHair_568x852.png';
@@ -26,6 +35,13 @@ class ModelLibrary {
         this.mouthSpriteSheet.src= './assets/mouths_96x52.png';
         this.eyebrowsSpriteSheet = new Image();
         this.eyebrowsSpriteSheet.src = './assets/eyebrows_194x77.png';
+        this.brasSpriteSheet = new Image();
+        this.brasSpriteSheet.src = './assets/bras_230x286.png';
+        this.underwearSpriteSheet = new Image();
+        this.underwearSpriteSheet.src = './assets/underwear_244x132.png';
+        this.legAcessoriesSpriteSheet = new Image();
+        this.legAcessoriesSpriteSheet.src = './assets/legAccessories_205x410.png';
+
 
         //Arrays holding frame coordinates
         this.bodyBaseFrames = [];
@@ -36,8 +52,10 @@ class ModelLibrary {
         this.hairBackFrames = [];
         this.topFrames = [];
         this.bottomFrames = [];
+        this.braFrames = [];
+        this.underwearFrames = [];
+        this.legAccessories = [];
 
-        //populate arrays
         this.addBodyBases();
         this.addEyes();
         this.addEyebrows();
@@ -46,6 +64,9 @@ class ModelLibrary {
         this.addHairBack();
         this.addTops();
         this.addBottoms();
+        this.addBras();
+        this.addUnderwear();
+        this.addLegAccessories();
     }
 
     addBodyBases(){
@@ -129,5 +150,36 @@ class ModelLibrary {
 
     addBottoms(){
 
+    }
+
+    addBras(){
+        let x = 0;
+
+        for (let i = 0; i < this.brasCount; i++){
+            let bra = new Frame(x, 0, this.brasWidth, this.brasHeight);
+            x += this.brasWidth;
+            this.braFrames.push(bra);
+        }
+    }
+
+    addUnderwear() {
+        let x = 0;
+
+        for (let i = 0; i < this.underwearCount; i++) {
+            let undie = new Frame(x, 0, this.underwearWidth, this.underwearHeight);
+            x += this.underwearWidth;
+            this.underwearFrames.push(undie);
+        }
+    }
+
+
+    addLegAccessories() {
+        let x = 0;
+
+        for (let i = 0; i < this.legAccessoriesCount; i++) {
+            let leg = new Frame(x, 0, this.legAccessoriesWidth, this.legAccessoriesHeight);
+            x += this.legAccessoriesWidth;
+            this.legAccessories.push(leg);
+        }
     }
 }

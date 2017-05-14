@@ -62,20 +62,20 @@ class ClothesCategoryWindowPage2 {
     }
 
     addButtons() {
-        let leftTopsButton = new Button(580, 333, 'arrow-left', this.model.previousBackHair.bind(this.model.context), this.buttonLibrary);
-        this.buttons.push(leftTopsButton);
-        let rightTopsButton = new Button(654, 333, 'arrow-right', this.model.nextBackHair.bind(this.model.context), this.buttonLibrary);
-        this.buttons.push(rightTopsButton);
+        let leftBrasButton = new Button(580, 333, 'arrow-left', this.model.previousBra.bind(this.model.context), this.buttonLibrary);
+        this.buttons.push(leftBrasButton);
+        let rightBrasButton = new Button(654, 333, 'arrow-right', this.model.nextBra.bind(this.model.context), this.buttonLibrary);
+        this.buttons.push(rightBrasButton);
 
-        let leftJacketsButton = new Button(851, 333, 'arrow-left', this.model.previousEyebrows.bind(this.model.context), this.buttonLibrary);
-        this.buttons.push(leftJacketsButton);
-        let rightJacketsButton = new Button(925, 333, 'arrow-right', this.model.nextEyebrows.bind(this.model.context),this.buttonLibrary);
-        this.buttons.push(rightJacketsButton);
+        let leftUnderwearButton = new Button(851, 333, 'arrow-left', this.model.previousUnderwear.bind(this.model.context), this.buttonLibrary);
+        this.buttons.push(leftUnderwearButton);
+        let rightUnderwearButton = new Button(925, 333, 'arrow-right', this.model.nextUnderwear.bind(this.model.context),this.buttonLibrary);
+        this.buttons.push(rightUnderwearButton);
 
-        let leftMouthButton = new Button(724, 549, 'arrow-left', this.model.previousFringe.bind(this.model.context), this.buttonLibrary);
-        this.buttons.push(leftMouthButton);
-        let rightMouthButton = new Button(798, 549, 'arrow-right', this.model.nextFringe.bind(this.model.context),this.buttonLibrary);
-        this.buttons.push(rightMouthButton);
+        let leftLegsButton = new Button(724, 549, 'arrow-left', this.model.previousLegAccessory.bind(this.model.context), this.buttonLibrary);
+        this.buttons.push(leftLegsButton);
+        let rightLegsButton = new Button(798, 549, 'arrow-right', this.model.nextLegAccessory.bind(this.model.context),this.buttonLibrary);
+        this.buttons.push(rightLegsButton);
 
         let prevPageButton = new Button(1000, 725, 'arrow-left-small', this.windowManager.unpauseClothesCategoryWindow1.bind(this.windowManager.context), this.buttonLibrary);
         this.buttons.push(prevPageButton);
