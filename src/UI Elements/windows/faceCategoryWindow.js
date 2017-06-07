@@ -1,5 +1,5 @@
 class FaceCategoryWindow {
-    constructor(buttonLibrary, windowLibrary, model) {
+    constructor(buttonLibrary, windowLibrary, model, colourHandler) {
         this.x = 507;
         this.y = 187;
         this.isPaused = false;
@@ -12,6 +12,12 @@ class FaceCategoryWindow {
         this.height = this.windowLibrary.height;
         this.buttons = [];
         this.addButtons();
+        this.colourPickers = [];
+        this.colourHandler = colourHandler;
+        this.addColourPickers();
+        this.addButtonsToCP();
+        this.addCPButtonsToButtons();
+        this.orderButtonsInCPs();
     }
     
     update() {
@@ -20,10 +26,15 @@ class FaceCategoryWindow {
         }
     }
     
+    
     render(context) {
         context.drawImage(this.spritesheet,this.windowFrame.getX(), this.windowFrame.getY(), this.width, this.height, this.x,this.y, this.width, this.height);
         for (let i = 0; i < this.buttons.length; i++) {
             this.buttons[i].render(context);
+        }
+        
+        for (let p of this.colourPickers){
+            p.render(context);
         }
     }
 
@@ -76,5 +87,32 @@ class FaceCategoryWindow {
         this.buttons.push(leftMouthButton);
         let rightMouthButton = new Button(798, 549, 'arrow-right', this.model.nextFringe.bind(this.model.context),this.buttonLibrary);
         this.buttons.push(rightMouthButton);
+    }
+
+    addColourPickers() {
+        this.colourPickers.push(new ColourPicker(720, 310, false));
+    }
+
+    addButtonsToCP(){
+        this.colourPickers[0].addButton(new Button(0, 0, 'colour-brown', this.colourHandler.changeEyesBrown.bind(this.colourHandler.context), this.buttonLibrary));
+        this.colourPickers[0].addButton(new Button(0, 0, 'colour-purple', this.colourHandler.changeEyesPurple.bind(this.colourHandler.context), this.buttonLibrary));
+        this.colourPickers[0].addButton(new Button(0, 0, 'colour-sky', this.colourHandler.changeEyesSkyBlue.bind(this.colourHandler.context), this.buttonLibrary));
+        this.colourPickers[0].addButton(new Button(0, 0, 'colour-green', this.colourHandler.changeEyesGreen.bind(this.colourHandler.context), this.buttonLibrary));
+        this.colourPickers[0].addButton(new Button(0, 0, 'colour-rainbow', this.colourHandler.changeEyesSpecial.bind(this.colourHandler.context), this.buttonLibrary));
+    }
+
+    addCPButtonsToButtons(){
+        for (let p of this.colourPickers) {
+            console.dir(p);
+            for (let b of p.buttons) {
+                this.buttons.push(b);
+            }
+        }
+    }
+
+    orderButtonsInCPs(){
+        for (let p of this.colourPickers) {
+            p.positionButtons();
+        }
     }
 }

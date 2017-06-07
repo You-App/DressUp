@@ -1,13 +1,14 @@
 class WindowManager {
-    constructor(buttonLibrary, model) {
+    constructor(buttonLibrary, model, colourHandler) {
         this.context = this;
         this.model = model;
         this.windowLibrary = new WindowLibrary();
         this.buttonLibrary = buttonLibrary;
+        this.colourHandler = colourHandler;
         this.windows = [];
-        let faceCategoryWindow = new FaceCategoryWindow(this.buttonLibrary, this.windowLibrary, this.model);
+        let faceCategoryWindow = new FaceCategoryWindow(this.buttonLibrary, this.windowLibrary, this.model, this.colourHandler);
         faceCategoryWindow.isPaused = false;
-        let hairCategoryWindow = new HairCategoryWindow(this.buttonLibrary, this.windowLibrary, this.model);
+        let hairCategoryWindow = new HairCategoryWindow(this.buttonLibrary, this.windowLibrary, this.model, this.colourHandler);
         let clothesCategoryWindow1 = new ClothesCategoryWindowPage1(this.buttonLibrary, this.windowLibrary, this, this.model);
         let clothesCategoryWindow2 = new ClothesCategoryWindowPage2(this.buttonLibrary, this.windowLibrary, this, this.model);
         let accessoriesCategoryWindow = new AccessoriesCategoryWindow(this.buttonLibrary, this.windowLibrary, this.model);

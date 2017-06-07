@@ -17,6 +17,7 @@ class Model{
         this.legAccessoryStyle = 0;
         this.topStyle = 0;
         this.bottomStyle = 0;
+        console.dir(this.modelLibrary.hairBackFrames);
     }
 
     update() {
@@ -170,6 +171,43 @@ class Model{
 
         if(this.bottomStyle < 0){
             this.bottomStyle = this.modelLibrary.bottomsCount - 1;
+        }
+    }
+
+    changeHairColour(colour){
+        switch(colour){
+            case 'yellow':
+                this.fringeColour = 0;
+                this.hairBackColour = 0;
+                break;
+            case 'gray':
+                this.fringeColour = 1;
+                this.hairBackColour = 1;
+                break;
+            case 'black':
+                this.fringeColour = 2;
+                this.hairBackColour = 2;
+                break;
+        }
+    }
+
+    changeEyeColour(colour){
+        switch(colour){
+            case 'brown':
+                this.eyesColour = 0;
+                break;
+            case 'purple':
+                this.eyesColour = 1;
+                break;
+            case 'green':
+                this.eyesColour = 3;
+                break;
+            case 'sky':
+                this.eyesColour = 2;
+                break;
+            case 'special':
+                this.eyesColour = 4;
+                break;
         }
     }
 }

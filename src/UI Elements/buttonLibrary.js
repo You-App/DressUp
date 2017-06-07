@@ -6,6 +6,8 @@ class ButtonLibrary {
         this.smallArrowButtonHeight = 50;
         this.categoryButtonWidth = 65;
         this.categoryButtonHeight = 49;
+        this.colourButtonSide = 28;
+        this.colourButtonsCount = 10;
         this.categoryButtonsCount = 4;
         this.arrowButtonsCount = 2;
         this.smallArrowButtonsCount = 2;
@@ -23,9 +25,14 @@ class ButtonLibrary {
         this.categoryButtonSpriteSheet.src = './assets/categoryButtons_65x49.png';
         this.categoryButtons = [];
 
+        this.colourButtonSpriteSheet = new Image();
+        this.colourButtonSpriteSheet.src = './assets/colourButtons_28x28.png';
+        this.colourButtons = [];
+
         this.addArrowButtons();
         this.addSmallArrowButtons();
         this.addCategoryButtons();
+        this.addColourButtons();
     }
 
     addArrowButtons() {
@@ -76,6 +83,23 @@ class ButtonLibrary {
         }
     }
 
+    addColourButtons(){
+        let x = 0;
+        let y = 0;
+
+        for (let i = 0; i < this.colourButtonsCount; i++) {
+            x = 0;
+            let currentButton = [];
+            for (let j = 0; j < this.buttonStateCount; j++) {
+                let buttonState = new Frame(x, y, this.colourButtonSide, this.colourButtonSide);
+                currentButton.push(buttonState);
+                x += this.colourButtonSide;
+            }
+            this.colourButtons.push(currentButton);
+            y += this.colourButtonSide;
+        }
+    }
+
     getButtonByType(type) {
         let result = null;
         switch (type){
@@ -103,6 +127,36 @@ class ButtonLibrary {
             case 'category-accessories':
                 result = this.categoryButtons[3];
                 break;
+            case 'colour-yellow':
+                result = this.colourButtons[8];
+                break;
+            case 'colour-gray':
+                result = this.colourButtons[9];
+                break;
+            case 'colour-black':
+                result = this.colourButtons[5];
+                break;
+            case 'colour-red':
+                result = this.colourButtons[7];
+                break;
+            case 'colour-rainbow':
+                result = this.colourButtons[0];
+                break;
+            case 'colour-mauve':
+                result = this.colourButtons[1];
+                break;
+            case 'colour-purple':
+                result = this.colourButtons[2];
+                break;
+            case 'colour-green':
+                result = this.colourButtons[3];
+                break;
+            case 'colour-brown':
+                result = this.colourButtons[6];
+                break;
+            case 'colour-sky':
+                result = this.colourButtons[4];
+                break;
             default:
                 alert('Invalid button type');
                 break;
@@ -112,12 +166,14 @@ class ButtonLibrary {
 
     getButtonSpriteSheetByType(type) {
         let result = null;
-        if(type.includes('small')){
+        if (type.includes('small')){
             result = this.smallArrowButtonSpritesheet;
-        } else if(type.includes('arrow')) {
+        } else if (type.includes('arrow')) {
             result = this.arrowButtonSpritesheet;
-        } else if(type.includes('category')) {
+        } else if (type.includes('category')) {
             result = this.categoryButtonSpriteSheet;
+        } else if (type.includes('colour')){
+            result = this.colourButtonSpriteSheet;
         } else {
             alert('Invalid spritesheet');
         }
@@ -129,22 +185,26 @@ class ButtonLibrary {
         let result = null;
         if(type.includes('small')){
             result = this.smallArrowButtonHeight;
-        } else if(type.includes('arrow')) {
+        } else if (type.includes('arrow')) {
             result = this.arrowButtonHeight;
-        } else if(type.includes('category')) {
+        } else if (type.includes('category')) {
             result = this.categoryButtonHeight;
+        } else if (type.includes('colour')){
+            result = this.colourButtonSide;
         }
         return result;
     }
 
     getWidthByType(type) {
         let result = null;
-        if(type.includes('small')){
+        if (type.includes('small')){
             result = this.smallArrowButtonWidth;
-        } else if(type.includes('arrow')) {
+        } else if (type.includes('arrow')) {
             result = this.arrowButtonWidth;
-        } else if(type.includes('category')) {
+        } else if (type.includes('category')) {
             result = this.categoryButtonWidth;
+        } else if (type.includes('colour')){
+            result = this.colourButtonSide;
         }
         return result;
     }

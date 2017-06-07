@@ -93,14 +93,15 @@ class ModelLibrary {
         let y = 0;
 
         for (let i = 0; i < this.eyesCount; i++){
-            let mouth = [];
+            let eyes = [];
             for (let j = 0; j < 5; j++) {
                 let current = new Frame(x, y, this.eyesWidth, this.eyesHeight);
-                mouth.push(current);
+                eyes.push(current);
                 x += this.eyesWidth;
             }
             y += this.eyesHeight;
-            this.eyeFrames.push(mouth);
+            x = 0;
+            this.eyeFrames.push(eyes);
         }
     }
 
@@ -132,11 +133,13 @@ class ModelLibrary {
 
         for (let i = 0; i < this.fringeCount; i++){
             let currentFringe = [];
-            for (let j = 0; j < 1; j++) {
+            for (let j = 0; j < 3; j++) {
                 let currentFrame = new Frame(x, y, this.hairWidth, this.hairHeight);
                 currentFringe.push(currentFrame);
+                x += this.hairWidth;
             }
             y += this.hairHeight;
+            x = 0;
             this.fringeFrames.push(currentFringe);
         }
     }
@@ -147,11 +150,13 @@ class ModelLibrary {
 
         for (let i = 0; i < this.backHairCount; i++){
             let hairStyle = [];
-            for (let j = 0; j < 1; j++) {
+            for (let j = 0; j < 3; j++) {
                 let currentFrame = new Frame(x, y, this.hairWidth, this.hairHeight);
                 hairStyle.push(currentFrame);
+                x += this.hairWidth;
             }
             y += this.hairHeight;
+            x = 0;
             this.hairBackFrames.push(hairStyle);
         }
     }

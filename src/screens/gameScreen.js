@@ -2,6 +2,7 @@ class GameScreen {
     static getContext() {
         return this;
     }
+    
     constructor() {
         this.addEventListener();
         this.isPaused = false;
@@ -10,7 +11,8 @@ class GameScreen {
         this.model = new Model();
         this.buttons = [];
         this.buttonLibrary = new ButtonLibrary();
-        this.windowManager = new WindowManager(this.buttonLibrary, this.model);
+        this.colourHandler = new ColourHandler(this.model);
+        this.windowManager = new WindowManager(this.buttonLibrary, this.model, this.colourHandler);
         this.windows = [];
         this.addButtonsToScreen();
     }
