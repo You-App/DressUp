@@ -11,7 +11,6 @@ class GameScreen {
         this.model = new Model();
         this.buttons = [];
         this.buttonLibrary = new ButtonLibrary();
-        this.colourHandler = new ColourHandler(this.model);
         this.windowManager = new WindowManager(this.buttonLibrary, this.model, this.colourHandler);
         this.windows = [];
         this.addButtonsToScreen();

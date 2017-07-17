@@ -89,11 +89,11 @@ class HairCategoryWindow  {
     }
 
     addButtonsToCP(){
-        this.colourPickers[0].addButton(new Button(0, 0, 'colour-gray', this.colourHandler.changeHairGray.bind(this.colourHandler.context), this.buttonLibrary));
-        this.colourPickers[0].addButton(new Button(0, 0, 'colour-yellow', this.colourHandler.changeHairYellow.bind(this.colourHandler.context), this.buttonLibrary));
+        this.colourPickers[0].addButton(new Button(0, 0, 'colour-gray', () => this.model.changeHairColour('gray'), this.buttonLibrary));
+        this.colourPickers[0].addButton(new Button(0, 0, 'colour-yellow', () => this.model.changeHairColour('yellow'), this.buttonLibrary));
         this.colourPickers[0].addButton(new Button(0, 0, 'colour-red', null, this.buttonLibrary));
         this.colourPickers[0].addButton(new Button(0, 0, 'colour-brown', null, this.buttonLibrary));
-        this.colourPickers[0].addButton(new Button(0, 0, 'colour-black', this.colourHandler.changeHairBlack.bind(this.colourHandler.context), this.buttonLibrary));
+        this.colourPickers[0].addButton(new Button(0, 0, 'colour-black', () => this.model.changeHairColour('black'), this.buttonLibrary));
         this.colourPickers[1].addButton(new Button(0, 0, 'colour-sky', null, this.buttonLibrary));
         this.colourPickers[1].addButton(new Button(0, 0, 'colour-green', null, this.buttonLibrary));
         this.colourPickers[1].addButton(new Button(0, 0, 'colour-purple', null, this.buttonLibrary));

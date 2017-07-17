@@ -94,11 +94,15 @@ class FaceCategoryWindow {
     }
 
     addButtonsToCP(){
-        this.colourPickers[0].addButton(new Button(0, 0, 'colour-brown', this.colourHandler.changeEyesBrown.bind(this.colourHandler.context), this.buttonLibrary));
-        this.colourPickers[0].addButton(new Button(0, 0, 'colour-purple', this.colourHandler.changeEyesPurple.bind(this.colourHandler.context), this.buttonLibrary));
-        this.colourPickers[0].addButton(new Button(0, 0, 'colour-sky', this.colourHandler.changeEyesSkyBlue.bind(this.colourHandler.context), this.buttonLibrary));
-        this.colourPickers[0].addButton(new Button(0, 0, 'colour-green', this.colourHandler.changeEyesGreen.bind(this.colourHandler.context), this.buttonLibrary));
-        this.colourPickers[0].addButton(new Button(0, 0, 'colour-rainbow', this.colourHandler.changeEyesSpecial.bind(this.colourHandler.context), this.buttonLibrary));
+        this.colourPickers[0].addButton(new Button(0, 0, 'colour-brown', () => this.model.changeEyeColour('brown'), this.buttonLibrary));
+
+        // this.colourHandler.changeEyesBrown.bind(this.colourHandler.context)
+        // this.colourHandler.changeEyesPurple.bind(this.colourHandler.context)
+
+        this.colourPickers[0].addButton(new Button(0, 0, 'colour-purple', () => this.model.changeEyeColour('purple'), this.buttonLibrary));
+        this.colourPickers[0].addButton(new Button(0, 0, 'colour-sky', () => this.model.changeEyeColour('sky'), this.buttonLibrary));
+        this.colourPickers[0].addButton(new Button(0, 0, 'colour-green', () => this.model.changeEyeColour('green'), this.buttonLibrary));
+        this.colourPickers[0].addButton(new Button(0, 0, 'colour-rainbow', () => this.model.changeEyeColour('special'), this.buttonLibrary));
     }
 
     addCPButtonsToButtons(){
