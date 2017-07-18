@@ -22,14 +22,14 @@ class ModelLibrary {
 
         this.backHairCount = 6;
         this.fringeCount = 5;
-        this.eyesCount = 1;
-        this.mouthsCount = 1;
-        this.eyebrowsCount = 4;
+        this.eyesCount = 2;
+        this.mouthsCount = 2;
+        this.eyebrowsCount = 5;
         this.brasCount = 3;
         this.underwearCount = 2;
         this.legAccessoriesCount = 2;
-        this.topsCount = 3;
-        this.bottomsCount = 1;
+        this.topsCount = 4;
+        this.bottomsCount = 2;
 
         this.backHairSpritesheet = new Image();
         this.backHairSpritesheet.src = './assets/backHair_568x852.png';

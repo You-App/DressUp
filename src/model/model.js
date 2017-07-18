@@ -47,7 +47,7 @@ class Model{
         context.drawImage(this.modelLibrary.fringesSpritesheet, this.fringeFrame.getX(), this.fringeFrame.getY(), this.fringeFrame.getWidth(), this.fringeFrame.getHeight(), -5, 10, this.fringeFrame.getWidth(), this.fringeFrame.getHeight() );
     }
 
-
+    //TODO: Refactor this logic. REALLY.
     nextBackHair() {
         this.hairBackStyle++;
         if(this.hairBackStyle >= this.modelLibrary.backHairCount) {
@@ -173,6 +173,39 @@ class Model{
             this.bottomStyle = this.modelLibrary.bottomsCount - 1;
         }
     }
+
+    nextMouth(){
+        this.mouthStyle++;
+
+        if(this.mouthStyle >= this.modelLibrary.mouthsCount){
+            this.mouthStyle = 0;
+        }
+    }
+
+    previousMouth() {
+        this.mouthStyle--;
+
+        if(this.mouthStyle < 0){
+            this.mouthStyle = this.modelLibrary.mouthsCount - 1;
+        }
+    }
+
+    nextEyes(){
+        this.eyesStyle++;
+
+        if(this.eyesStyle >= this.modelLibrary.eyesCount){
+            this.eyesStyle = 0;
+        }
+    }
+
+    previousEyes(){
+        this.eyesStyle--;
+
+        if(this.eyesStyle < 0){
+            this.eyesStyle =  this.modelLibrary.eyesCount - 1;
+        }
+    }
+
 
     changeHairColour(colour){
         switch(colour){

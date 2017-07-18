@@ -73,9 +73,9 @@ class FaceCategoryWindow {
     }
 
     addButtons(){
-        let leftEyesButton = new Button(580, 333, 'arrow-left', this.model.previousBackHair.bind(this.model.context), this.buttonLibrary);
+        let leftEyesButton = new Button(580, 333, 'arrow-left', this.model.previousEyes.bind(this.model.context), this.buttonLibrary);
         this.buttons.push(leftEyesButton);
-        let rightEyesButton = new Button(654, 333, 'arrow-right', this.model.nextBackHair.bind(this.model.context), this.buttonLibrary);
+        let rightEyesButton = new Button(654, 333, 'arrow-right', this.model.nextEyes.bind(this.model.context), this.buttonLibrary);
         this.buttons.push(rightEyesButton);
 
         let leftEyebrowsButton = new Button(851, 333, 'arrow-left', this.model.previousEyebrows.bind(this.model.context), this.buttonLibrary);
@@ -83,9 +83,9 @@ class FaceCategoryWindow {
         let rightEyebrowsButton = new Button(925, 333, 'arrow-right', this.model.nextEyebrows.bind(this.model.context),this.buttonLibrary);
         this.buttons.push(rightEyebrowsButton);
 
-        let leftMouthButton = new Button(724, 549, 'arrow-left', this.model.previousFringe.bind(this.model.context), this.buttonLibrary);
+        let leftMouthButton = new Button(724, 549, 'arrow-left', this.model.previousMouth.bind(this.model.context), this.buttonLibrary);
         this.buttons.push(leftMouthButton);
-        let rightMouthButton = new Button(798, 549, 'arrow-right', this.model.nextFringe.bind(this.model.context),this.buttonLibrary);
+        let rightMouthButton = new Button(798, 549, 'arrow-right', this.model.nextMouth.bind(this.model.context),this.buttonLibrary);
         this.buttons.push(rightMouthButton);
     }
 
