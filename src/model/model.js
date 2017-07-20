@@ -5,9 +5,8 @@ class Model{
         this.bodyBaseFrame = this.modelLibrary.bodyBaseFrames[0];
 
         this.hairBackStyle = 3;
-        this.hairBackColour = 0;
+        this.hairColour = 0;
         this.fringeStyle = 1;
-        this.fringeColour = 0;
         this.eyesStyle = 0;
         this.eyesColour = 0;
         this.mouthStyle = 0;
@@ -17,15 +16,14 @@ class Model{
         this.legAccessoryStyle = 0;
         this.topStyle = 0;
         this.bottomStyle = 0;
-        console.dir(this.modelLibrary.hairBackFrames);
     }
 
     update() {
-        this.hairBackFrame = this.modelLibrary.hairBackFrames[this.hairBackStyle][this.hairBackColour];
+        this.hairBackFrame = this.modelLibrary.hairBackFrames[this.hairBackStyle][this.hairColour];
         this.eyebrowsFrame = this.modelLibrary.eyebrowFrames[this.eyebrowsStyle];
         this.eyesFrame = this.modelLibrary.eyeFrames[this.eyesStyle][this.eyesColour];
         this.mouthFrame = this.modelLibrary.mouthFrames[this.mouthStyle];
-        this.fringeFrame = this.modelLibrary.fringeFrames[this.fringeStyle][this.fringeColour];
+        this.fringeFrame = this.modelLibrary.fringeFrames[this.fringeStyle][this.hairColour];
         this.braFrame = this.modelLibrary.braFrames[this.braStyle];
         this.underwearFrame = this.modelLibrary.underwearFrames[this.underwearStyle];
         this.legAccessoryFrame = this.modelLibrary.legAccessoryFrames[this.legAccessoryStyle];
@@ -210,16 +208,16 @@ class Model{
     changeHairColour(colour){
         switch(colour){
             case 'yellow':
-                this.fringeColour = 0;
-                this.hairBackColour = 0;
+                this.hairColour = 0;
                 break;
             case 'gray':
-                this.fringeColour = 1;
-                this.hairBackColour = 1;
+                this.hairColour = 1;
                 break;
             case 'black':
-                this.fringeColour = 2;
-                this.hairBackColour = 2;
+                this.hairColour = 2;
+                break;
+            case "brown":
+                this.hairColour = 3;
                 break;
         }
     }

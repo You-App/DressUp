@@ -20,6 +20,8 @@ class ModelLibrary {
         this.bottomsWidth = 441;
         this.bottomsHeight = 432;
 
+        this.hairColours = 4;
+
         this.backHairCount = 6;
         this.fringeCount = 5;
         this.eyesCount = 2;
@@ -133,7 +135,7 @@ class ModelLibrary {
 
         for (let i = 0; i < this.fringeCount; i++){
             let currentFringe = [];
-            for (let j = 0; j < 3; j++) {
+            for (let j = 0; j < this.hairColours; j++) {
                 let currentFrame = new Frame(x, y, this.hairWidth, this.hairHeight);
                 currentFringe.push(currentFrame);
                 x += this.hairWidth;
@@ -150,7 +152,7 @@ class ModelLibrary {
 
         for (let i = 0; i < this.backHairCount; i++){
             let hairStyle = [];
-            for (let j = 0; j < 3; j++) {
+            for (let j = 0; j < this.hairColours; j++) {
                 let currentFrame = new Frame(x, y, this.hairWidth, this.hairHeight);
                 hairStyle.push(currentFrame);
                 x += this.hairWidth;
